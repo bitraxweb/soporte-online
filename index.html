@@ -1,0 +1,550 @@
+```html
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Soporte Asistencia Online | Ayuda gratuita para usuarios de tarjetas</title>
+
+  <meta name="description"
+        content="Soporte Asistencia Online ofrece orientación gratuita para usuarios de tarjetas en Argentina sobre reclamos, cancelaciones, seguridad, reembolsos y pagos no reconocidos.">
+
+  <meta name="robots" content="index, follow">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f7fa;
+      color: #172033;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 18px 20px;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #123b70;
+    }
+
+    .badge {
+      font-size: 13px;
+      color: #52606d;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #123b70, #1769aa);
+      color: white;
+      padding: 75px 20px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 44px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #edf6ff;
+    }
+
+    .button {
+      display: inline-block;
+      background: #ffffff;
+      color: #123b70;
+      padding: 15px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      margin: 6px;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-green {
+      background: #25d366;
+      color: white;
+    }
+
+    section {
+      padding: 55px 20px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+      color: #123b70;
+    }
+
+    .section-title p {
+      color: #5f6b7a;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.04);
+    }
+
+    .card h3 {
+      color: #123b70;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #566273;
+    }
+
+    .free {
+      background: #eef8f1;
+      border-top: 1px solid #d4ead9;
+      border-bottom: 1px solid #d4ead9;
+    }
+
+    .free-box {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .free-box h2 {
+      color: #176b39;
+      margin-bottom: 12px;
+    }
+
+    .security {
+      background: #fff;
+    }
+
+    .security-box {
+      max-width: 850px;
+      margin: auto;
+      background: #f8fafc;
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .security-box ul {
+      margin: 15px 0 0 20px;
+    }
+
+    .security-box li {
+      margin-bottom: 9px;
+    }
+
+    .notice {
+      background: #fff7e6;
+      border: 1px solid #f2d18b;
+      padding: 25px;
+      border-radius: 10px;
+      margin-top: 30px;
+    }
+
+    .notice strong {
+      color: #815b00;
+    }
+
+    .legal {
+      background: #f0f2f5;
+    }
+
+    .legal-content {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .legal h3 {
+      margin-top: 25px;
+      margin-bottom: 8px;
+      color: #243447;
+    }
+
+    .legal p {
+      color: #5b6573;
+      font-size: 14px;
+    }
+
+    footer {
+      background: #101827;
+      color: #cbd5e1;
+      padding: 35px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    .whatsapp-fixed {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      background: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 27px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
+
+    @media (max-width: 800px) {
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">Soporte Asistencia Online</div>
+    <div class="badge">Servicio independiente · Argentina</div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-content">
+
+      <h1>Asistencia y orientación gratuita</h1>
+
+      <p>
+        Te orientamos de manera gratuita ante consultas relacionadas
+        con seguridad, reclamos, cancelaciones, reembolsos y pagos
+        que no reconozcas en tus tarjetas.
+      </p>
+
+      <a
+        class="button button-green"
+        href="https://wa.link/8keet6"
+        target="_blank"
+        rel="noopener noreferrer">
+        Contactar por WhatsApp
+      </a>
+
+    </div>
+  </section>
+
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>¿En qué podemos orientarte?</h2>
+        <p>Servicio de asistencia sin costo para usuarios en Argentina.</p>
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <h3>Reclamos</h3>
+          <p>
+            Orientación general sobre cómo iniciar y gestionar
+            un reclamo relacionado con operaciones de tu tarjeta.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Pagos no reconocidos</h3>
+          <p>
+            Te brindamos información general sobre los pasos que
+            normalmente corresponden ante una operación que no reconocés.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Seguridad</h3>
+          <p>
+            Información y recomendaciones para actuar ante situaciones
+            que puedan comprometer la seguridad de una tarjeta.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Cancelaciones</h3>
+          <p>
+            Orientación general sobre procedimientos de cancelación
+            y las alternativas que pueden corresponder según cada caso.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Reembolsos</h3>
+          <p>
+            Información general sobre procesos de devolución y
+            reclamos relacionados con pagos.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Asistencia online</h3>
+          <p>
+            Podés comunicarte online para recibir orientación inicial
+            sobre tu situación.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="free">
+    <div class="free-box">
+
+      <h2>Servicio totalmente gratuito</h2>
+
+      <p>
+        La asistencia proporcionada a través de este sitio
+        no tiene costo para el usuario.
+      </p>
+
+      <br>
+
+      <a
+        class="button button-green"
+        href="https://wa.link/8keet6"
+        target="_blank"
+        rel="noopener noreferrer">
+        Solicitar asistencia
+      </a>
+
+    </div>
+  </section>
+
+
+  <section class="security">
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Tu seguridad es importante</h2>
+        <p>Protegé siempre tus datos personales y financieros.</p>
+      </div>
+
+      <div class="security-box">
+
+        <p>
+          <strong>Nunca compartas información confidencial por WhatsApp
+          ni con terceros.</strong>
+        </p>
+
+        <ul>
+          <li>No solicitamos contraseñas.</li>
+          <li>No solicitamos PIN de tarjetas.</li>
+          <li>No solicitamos códigos recibidos por SMS.</li>
+          <li>No solicitamos códigos de seguridad de aplicaciones bancarias.</li>
+          <li>No solicitamos claves de home banking.</li>
+          <li>No solicitamos que envíes dinero para recibir asistencia.</li>
+        </ul>
+
+        <div class="notice">
+          <strong>Importante:</strong>
+          Ante una sospecha de fraude, pérdida o robo de una tarjeta,
+          comunicarse también directamente con el banco o emisor
+          correspondiente utilizando sus canales oficiales.
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>¿Necesitás ayuda?</h2>
+        <p>
+          Escribinos y contanos brevemente qué situación estás atravesando.
+        </p>
+      </div>
+
+      <div style="text-align:center;">
+        <a
+          class="button button-green"
+          href="https://wa.link/8keet6"
+          target="_blank"
+          rel="noopener noreferrer">
+          Hablar por WhatsApp
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="legal">
+    <div class="legal-content">
+
+      <h2>Información legal</h2>
+
+      <h3>Identificación</h3>
+
+      <p>
+        Nombre comercial: <strong>Soporte Asistencia Online</strong><br>
+        CUIT: <strong>12-54885455-5</strong><br>
+        País de prestación del servicio: Argentina
+      </p>
+
+      <h3>Servicio independiente</h3>
+
+      <p>
+        Soporte Asistencia Online es un servicio independiente de
+        orientación y asistencia online. No somos Visa, Mastercard,
+        un banco, una entidad financiera ni representamos oficialmente
+        a dichas marcas, salvo que exista una autorización o relación
+        comercial que pueda acreditarse documentalmente.
+      </p>
+
+      <h3>Alcance de la asistencia</h3>
+
+      <p>
+        La información proporcionada tiene carácter orientativo y
+        no reemplaza la atención oficial del banco, emisor de la
+        tarjeta, organismo público o entidad correspondiente.
+        Las gestiones, reclamos, cancelaciones y reembolsos están
+        sujetos a las condiciones y procedimientos de cada entidad.
+      </p>
+
+      <h3>Gratuidad</h3>
+
+      <p>
+        La asistencia ofrecida mediante este sitio es gratuita.
+        No se solicita al usuario el pago de dinero para recibir
+        orientación inicial.
+      </p>
+
+      <h3>Privacidad y seguridad</h3>
+
+      <p>
+        Recomendamos no enviar mediante formularios, WhatsApp,
+        correo electrónico o cualquier otro canal contraseñas,
+        PIN, códigos de autenticación, códigos SMS, claves bancarias
+        ni información que permita acceder a cuentas financieras.
+      </p>
+
+      <h3>Contacto</h3>
+
+      <p>
+        Para solicitar asistencia podés utilizar el siguiente canal:
+      </p>
+
+      <p style="margin-top:10px;">
+        <a
+          href="https://wa.link/8keet6"
+          target="_blank"
+          rel="noopener noreferrer">
+          Contactar por WhatsApp
+        </a>
+      </p>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  <p>
+    <strong>Soporte Asistencia Online</strong>
+  </p>
+
+  <p>
+    Servicio independiente de orientación online · Argentina
+  </p>
+
+  <p style="margin-top:10px;">
+    CUIT: 12-54885455-5
+  </p>
+
+  <p style="margin-top:15px;">
+    © 2026 Soporte Asistencia Online. Todos los derechos reservados.
+  </p>
+</footer>
+
+
+<a
+  class="whatsapp-fixed"
+  href="https://wa.link/8keet6"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Contactar por WhatsApp">
+  ☎
+</a>
+
+</body>
+</html>
+```
