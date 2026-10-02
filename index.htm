@@ -1,89 +1,138 @@
-<!-- MODAL CORPORATIVO DE ATENCIÓN -->
+<!-- TIPOGRAFÍA -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+<!-- MODAL SOPORTE -->
 
 <div id="supportModal" class="support-modal">
+
     <div class="support-modal-box">
 
-        <div class="support-top">
-            <div class="support-brand-line"></div>
+        <div class="support-header">
 
-            <span class="support-status">
+            <div class="support-badge">
                 ATENCIÓN EN LÍNEA
-            </span>
+            </div>
 
             <h2>
-                Centro de atención al usuario
+                ¿Necesitas orientación con un pago o una tarjeta?
             </h2>
 
-            <p class="support-subtitle">
-                Reciba orientación sobre consultas relacionadas con pagos y tarjetas.
+            <p>
+                Nuestro equipo puede brindarte información general sobre los pasos disponibles según tu consulta.
             </p>
-        </div>
-
-        <div class="support-services">
-
-            <div class="support-service">
-                <span class="service-check">✓</span>
-                <span>Consultas sobre reembolsos</span>
-            </div>
-
-            <div class="support-service">
-                <span class="service-check">✓</span>
-                <span>Compras o consumos no reconocidos</span>
-            </div>
-
-            <div class="support-service">
-                <span class="service-check">✓</span>
-                <span>Consultas relacionadas con tarjetas</span>
-            </div>
-
-            <div class="support-service">
-                <span class="service-check">✓</span>
-                <span>Orientación sobre cargos y pagos</span>
-            </div>
 
         </div>
 
-        <p class="support-description">
-            Nuestro equipo de atención se encuentra disponible para brindar orientación inicial y ayudarle a identificar los pasos disponibles según su consulta.
-        </p>
 
-        <a
-            href="https://wa.me/5493876570464"
-            class="support-button"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            Contactar con atención
-        </a>
+        <div class="support-content">
 
-        <div class="support-footer-modal">
+            <div class="support-list">
 
-            <span class="security-dot"></span>
+                <div class="support-item">
+                    <div class="support-check">✓</div>
+                    <div>
+                        <strong>Reembolsos</strong>
+                        <span>Consultas relacionadas con devoluciones o reintegros.</span>
+                    </div>
+                </div>
 
-            <span>
-                No solicitamos contraseñas, PIN ni códigos de seguridad.
-            </span>
+
+                <div class="support-item">
+                    <div class="support-check">✓</div>
+                    <div>
+                        <strong>Compras no reconocidas</strong>
+                        <span>Orientación inicial ante cargos o consumos desconocidos.</span>
+                    </div>
+                </div>
+
+
+                <div class="support-item">
+                    <div class="support-check">✓</div>
+                    <div>
+                        <strong>Consultas sobre tarjetas</strong>
+                        <span>Información general sobre alternativas disponibles.</span>
+                    </div>
+                </div>
+
+
+                <div class="support-item">
+                    <div class="support-check">✓</div>
+                    <div>
+                        <strong>Pagos y cargos</strong>
+                        <span>Ayuda para comprender posibles pasos de consulta.</span>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="support-notice">
+                Soporte Argentina SAS es un servicio independiente de orientación.
+                No somos Visa, Mastercard ni una entidad bancaria.
+            </div>
+
+
+            <a
+                href="https://wa.me/5493876570464"
+                class="support-main-btn"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Soporte ahora
+            </a>
+
+
+            <div class="support-safe">
+                Nunca solicitamos contraseñas, PIN, claves bancarias ni códigos SMS.
+            </div>
 
         </div>
 
     </div>
+
 </div>
+
+
+
+<!-- BOTÓN FIJO PARA CELULAR -->
+
+<div class="mobile-support-bar">
+
+    <a
+        href="https://wa.me/5493876570464"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        Soporte ahora
+    </a>
+
+</div>
+
 
 
 <style>
 
-/* ============================= */
-/* MODAL CORPORATIVO */
-/* ============================= */
+*{
+    font-family:'Inter',Arial,sans-serif;
+}
+
+
+/* ========================= */
+/* MODAL */
+/* ========================= */
 
 .support-modal{
 
     position:fixed;
     inset:0;
+
     width:100%;
     height:100%;
 
-    background:rgba(15,30,55,.58);
+    background:rgba(8,20,42,.66);
 
     backdrop-filter:blur(5px);
     -webkit-backdrop-filter:blur(5px);
@@ -100,179 +149,169 @@
     visibility:hidden;
 
     transition:
-    opacity .35s ease,
-    visibility .35s ease;
-
+        opacity .3s ease,
+        visibility .3s ease;
 }
 
-
-/* MODAL VISIBLE */
 
 .support-modal.show{
 
     opacity:1;
     visibility:visible;
-
 }
 
 
-/* CONTENEDOR PRINCIPAL */
+/* CAJA */
 
 .support-modal-box{
 
     width:100%;
-    max-width:460px;
+    max-width:490px;
 
     background:#ffffff;
 
-    border-radius:18px;
+    border-radius:22px;
 
     overflow:hidden;
 
     box-shadow:
-    0 25px 80px rgba(0,0,0,.22);
+        0 30px 90px rgba(0,0,0,.28);
 
-    transform:translateY(15px);
+    transform:translateY(18px);
 
-    transition:transform .35s ease;
-
+    transition:transform .3s ease;
 }
 
-
-/* ANIMACIÓN */
 
 .support-modal.show .support-modal-box{
 
     transform:translateY(0);
-
 }
 
 
-/* CABECERA */
 
-.support-top{
+/* ========================= */
+/* CABECERA */
+/* ========================= */
+
+.support-header{
+
+    background:
+        linear-gradient(
+            135deg,
+            #0f3478,
+            #1d5fd1
+        );
 
     padding:
-    32px
-    32px
-    22px;
+        34px
+        32px
+        30px;
 
-    text-align:left;
-
+    color:white;
 }
 
 
-/* LÍNEA CORPORATIVA */
-
-.support-brand-line{
-
-    width:42px;
-    height:4px;
-
-    background:#123c8c;
-
-    border-radius:20px;
-
-    margin-bottom:20px;
-
-}
-
-
-/* ESTADO */
-
-.support-status{
+.support-badge{
 
     display:inline-block;
 
-    color:#1d5fd1;
+    background:rgba(255,255,255,.14);
+
+    border:1px solid rgba(255,255,255,.22);
+
+    padding:7px 12px;
+
+    border-radius:50px;
 
     font-size:11px;
 
     font-weight:700;
 
-    letter-spacing:1.2px;
+    letter-spacing:1px;
 
-    margin-bottom:10px;
-
+    margin-bottom:18px;
 }
 
 
-/* TITULO */
+.support-header h2{
 
-.support-top h2{
-
-    margin:0 0 8px;
-
-    color:#111827;
-
-    font-size:26px;
+    font-size:27px;
 
     line-height:1.25;
 
-    font-weight:700;
+    font-weight:800;
 
+    margin:0 0 12px;
 }
 
 
-/* SUBTITULO */
+.support-header p{
 
-.support-subtitle{
+    font-size:14px;
+
+    line-height:1.65;
+
+    color:#e8efff;
 
     margin:0;
-
-    color:#64748b;
-
-    font-size:15px;
-
-    line-height:1.6;
-
 }
 
 
-/* SERVICIOS */
 
-.support-services{
+/* ========================= */
+/* CONTENIDO */
+/* ========================= */
 
-    margin:
-    0
-    32px
-    20px;
+.support-content{
 
-    padding:18px;
-
-    background:#f7f9fc;
-
-    border:1px solid #e8edf5;
-
-    border-radius:12px;
-
+    padding:26px 32px 28px;
 }
 
 
-/* ITEM */
 
-.support-service{
+/* LISTADO */
+
+.support-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-bottom:20px;
+}
+
+
+.support-item{
 
     display:flex;
 
     align-items:flex-start;
 
-    gap:10px;
+    gap:12px;
 
-    padding:7px 0;
+    padding:12px 0;
 
-    color:#334155;
-
-    font-size:14px;
-
-    line-height:1.4;
-
+    border-bottom:1px solid #eef2f7;
 }
 
 
-/* CHECK */
+.support-item:last-child{
 
-.service-check{
+    border-bottom:none;
+}
+
+
+.support-check{
+
+    width:24px;
+    height:24px;
+
+    min-width:24px;
+
+    border-radius:50%;
 
     display:flex;
 
@@ -280,268 +319,338 @@
 
     justify-content:center;
 
-    flex:0 0 19px;
-
-    width:19px;
-    height:19px;
-
-    border-radius:50%;
-
     background:#eaf2ff;
 
     color:#123c8c;
 
-    font-size:11px;
+    font-size:12px;
 
-    font-weight:bold;
-
-    margin-top:1px;
-
+    font-weight:800;
 }
 
 
-/* DESCRIPCIÓN */
+.support-item strong{
 
-.support-description{
+    display:block;
 
-    margin:
-    0
-    32px
-    20px;
-
-    color:#475569;
+    color:#172033;
 
     font-size:14px;
 
-    line-height:1.6;
-
+    margin-bottom:3px;
 }
+
+
+.support-item span{
+
+    display:block;
+
+    color:#667085;
+
+    font-size:12px;
+
+    line-height:1.5;
+}
+
+
+
+/* AVISO */
+
+.support-notice{
+
+    background:#f7f9fc;
+
+    border:1px solid #e7ecf3;
+
+    border-radius:12px;
+
+    padding:13px 14px;
+
+    color:#586579;
+
+    font-size:12px;
+
+    line-height:1.55;
+
+    margin-bottom:18px;
+}
+
 
 
 /* BOTÓN */
 
-.support-button{
-
-    display:block;
-
-    margin:
-    0
-    32px;
-
-    padding:
-    15px
-    22px;
-
-    text-align:center;
-
-    background:
-    linear-gradient(
-    135deg,
-    #123c8c,
-    #1d5fd1
-    );
-
-    color:#ffffff;
-
-    text-decoration:none;
-
-    border-radius:9px;
-
-    font-size:15px;
-
-    font-weight:700;
-
-    letter-spacing:.1px;
-
-    box-shadow:
-    0 8px 22px
-    rgba(29,95,209,.23);
-
-    transition:
-    transform .2s ease,
-    box-shadow .2s ease,
-    background .2s ease;
-
-}
-
-
-/* HOVER */
-
-.support-button:hover{
-
-    transform:translateY(-1px);
-
-    box-shadow:
-    0 10px 28px
-    rgba(29,95,209,.30);
-
-}
-
-
-/* PIE */
-
-.support-footer-modal{
-
-    margin-top:24px;
-
-    padding:
-    17px
-    32px;
-
-    background:#f8fafc;
-
-    border-top:1px solid #eef2f7;
+.support-main-btn{
 
     display:flex;
 
     align-items:center;
 
-    gap:8px;
+    justify-content:center;
 
-    color:#64748b;
+    width:100%;
 
-    font-size:11px;
+    min-height:52px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123c8c,
+            #1d5fd1
+        );
+
+    color:#ffffff;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    border-radius:11px;
+
+    box-shadow:
+        0 10px 25px rgba(29,95,209,.25);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.support-main-btn:hover{
+
+    transform:translateY(-1px);
+
+    box-shadow:
+        0 12px 30px rgba(29,95,209,.33);
+}
+
+
+
+/* SEGURIDAD */
+
+.support-safe{
+
+    text-align:center;
+
+    color:#8792a4;
+
+    font-size:10px;
 
     line-height:1.5;
 
+    margin-top:13px;
 }
 
 
-/* PUNTO DE SEGURIDAD */
 
-.security-dot{
+/* ========================= */
+/* BOTÓN FIJO CELULAR */
+/* ========================= */
 
-    width:7px;
-    height:7px;
+.mobile-support-bar{
 
-    min-width:7px;
-
-    border-radius:50%;
-
-    background:#16a34a;
-
+    display:none;
 }
 
 
-/* ============================= */
-/* RESPONSIVE */
-/* ============================= */
+
+/* ========================= */
+/* RESPONSIVE CELULAR */
+/* ========================= */
 
 @media(max-width:600px){
 
+    body{
+
+        padding-bottom:78px;
+    }
+
+
     .support-modal{
 
-        padding:16px;
+        padding:0;
 
+        align-items:stretch;
     }
 
 
     .support-modal-box{
 
-        max-width:400px;
+        max-width:none;
 
-        border-radius:16px;
+        width:100%;
 
+        min-height:100dvh;
+
+        border-radius:0;
+
+        display:flex;
+
+        flex-direction:column;
+
+        overflow-y:auto;
     }
 
 
-    .support-top{
+    .support-header{
 
         padding:
-        27px
-        22px
-        19px;
-
+            34px
+            22px
+            27px;
     }
 
 
-    .support-top h2{
+    .support-header h2{
 
-        font-size:23px;
+        font-size:25px;
 
+        line-height:1.2;
     }
 
 
-    .support-subtitle{
+    .support-header p{
 
         font-size:14px;
-
     }
 
 
-    .support-services{
+    .support-content{
 
-        margin:
-        0
-        22px
-        18px;
+        flex:1;
 
-        padding:15px;
+        display:flex;
 
+        flex-direction:column;
+
+        padding:
+            22px
+            22px
+            28px;
     }
 
 
-    .support-service{
+    .support-list{
 
-        font-size:13px;
-
+        gap:4px;
     }
 
 
-    .support-description{
+    .support-item{
 
-        margin:
-        0
-        22px
-        18px;
-
-        font-size:13px;
-
+        padding:11px 0;
     }
 
 
-    .support-button{
+    .support-item strong{
 
-        margin:
-        0
-        22px;
+        font-size:14px;
+    }
 
-        padding:14px 18px;
+
+    .support-item span{
+
+        font-size:12px;
+    }
+
+
+    .support-notice{
+
+        font-size:11px;
+    }
+
+
+    .support-main-btn{
+
+        min-height:54px;
+
+        font-size:16px;
+    }
+
+
+    /* BARRA FIJA ABAJO */
+
+    .mobile-support-bar{
+
+        position:fixed;
+
+        left:0;
+        right:0;
+        bottom:0;
+
+        z-index:9998;
+
+        display:block;
+
+        background:#ffffff;
+
+        border-top:1px solid #e5eaf1;
+
+        padding:
+            10px
+            14px
+            calc(10px + env(safe-area-inset-bottom));
+
+        box-shadow:
+            0 -6px 20px rgba(0,0,0,.08);
+    }
+
+
+    .mobile-support-bar a{
+
+        display:flex;
+
+        justify-content:center;
+
+        align-items:center;
+
+        width:100%;
+
+        min-height:50px;
+
+        background:
+            linear-gradient(
+                135deg,
+                #123c8c,
+                #1d5fd1
+            );
+
+        color:#ffffff;
+
+        text-decoration:none;
+
+        border-radius:10px;
 
         font-size:15px;
 
-    }
-
-
-    .support-footer-modal{
-
-        padding:
-        15px
-        22px;
-
+        font-weight:700;
     }
 
 }
 
 
-/* PANTALLAS BAJAS */
 
-@media(max-height:620px){
+/* PANTALLAS PEQUEÑAS */
 
-    .support-modal{
+@media(max-width:360px){
 
-        align-items:flex-start;
+    .support-header h2{
 
-        overflow-y:auto;
+        font-size:22px;
+    }
 
-        padding-top:18px;
-        padding-bottom:18px;
 
+    .support-content{
+
+        padding-left:18px;
+        padding-right:18px;
     }
 
 }
 
 </style>
+
 
 
 <script>
@@ -552,7 +661,7 @@ document.getElementById("supportModal");
 
 window.addEventListener("load", function(){
 
-    /* APARECE POCO DESPUÉS DE CARGAR */
+    /* APARECE */
 
     setTimeout(function(){
 
@@ -561,7 +670,7 @@ window.addEventListener("load", function(){
     }, 500);
 
 
-    /* DESAPARECE AUTOMÁTICAMENTE A LOS 20 SEGUNDOS */
+    /* DESAPARECE DESPUÉS DE 20 SEGUNDOS */
 
     setTimeout(function(){
 
