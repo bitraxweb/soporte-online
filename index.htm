@@ -1,304 +1,542 @@
-<!-- MODAL DE ATENCIÓN -->
+<!-- MODAL CORPORATIVO DE ATENCIÓN -->
 
 <div id="supportModal" class="support-modal">
-
     <div class="support-modal-box">
 
-        <button class="support-close" onclick="closeSupportModal()">
-            ×
-        </button>
+        <div class="support-top">
+            <div class="support-brand-line"></div>
 
-        <div class="support-icon">
-            💬
+            <span class="support-status">
+                ATENCIÓN EN LÍNEA
+            </span>
+
+            <h2>
+                Centro de atención al usuario
+            </h2>
+
+            <p class="support-subtitle">
+                Reciba orientación sobre consultas relacionadas con pagos y tarjetas.
+            </p>
         </div>
 
-        <span class="support-status">
-            ● Atención en línea
-        </span>
+        <div class="support-services">
 
-        <h2>
-            ¿Necesitas ayuda?
-        </h2>
-
-        <p class="support-text">
-            Nuestro departamento de soporte puede orientarte ante consultas relacionadas con:
-        </p>
-
-        <div class="support-options">
-
-            <div>
-                ✓ Problemas con reembolsos
+            <div class="support-service">
+                <span class="service-check">✓</span>
+                <span>Consultas sobre reembolsos</span>
             </div>
 
-            <div>
-                ✓ Compras no autorizadas
+            <div class="support-service">
+                <span class="service-check">✓</span>
+                <span>Compras o consumos no reconocidos</span>
             </div>
 
-            <div>
-                ✓ Consultas sobre tarjetas
+            <div class="support-service">
+                <span class="service-check">✓</span>
+                <span>Consultas relacionadas con tarjetas</span>
             </div>
 
-            <div>
-                ✓ Cargos o pagos desconocidos
+            <div class="support-service">
+                <span class="service-check">✓</span>
+                <span>Orientación sobre cargos y pagos</span>
             </div>
 
         </div>
 
-        <p class="support-message">
-            Contacta con nuestro departamento de atención para recibir orientación.
+        <p class="support-description">
+            Nuestro equipo de atención se encuentra disponible para brindar orientación inicial y ayudarle a identificar los pasos disponibles según su consulta.
         </p>
 
         <a
             href="https://wa.me/5493876570464"
-            class="support-whatsapp"
+            class="support-button"
             target="_blank"
             rel="noopener noreferrer"
         >
-            💬 Contactar
+            Contactar con atención
         </a>
 
-        <p class="support-security">
-            Nunca solicitamos contraseñas, PIN ni códigos de seguridad.
-        </p>
+        <div class="support-footer-modal">
+
+            <span class="security-dot"></span>
+
+            <span>
+                No solicitamos contraseñas, PIN ni códigos de seguridad.
+            </span>
+
+        </div>
 
     </div>
-
 </div>
 
 
 <style>
 
-/* FONDO MODAL */
+/* ============================= */
+/* MODAL CORPORATIVO */
+/* ============================= */
 
 .support-modal{
+
     position:fixed;
     inset:0;
     width:100%;
     height:100%;
-    background:rgba(15,23,42,.56);
-    backdrop-filter:blur(4px);
-    -webkit-backdrop-filter:blur(4px);
+
+    background:rgba(15,30,55,.58);
+
+    backdrop-filter:blur(5px);
+    -webkit-backdrop-filter:blur(5px);
+
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+
     padding:20px;
+
     z-index:99999;
+
     opacity:0;
     visibility:hidden;
-    transition:opacity .3s ease, visibility .3s ease;
+
+    transition:
+    opacity .35s ease,
+    visibility .35s ease;
+
 }
 
 
-/* MODAL ACTIVA */
+/* MODAL VISIBLE */
 
 .support-modal.show{
+
     opacity:1;
     visibility:visible;
+
 }
 
 
-/* CAJA */
+/* CONTENEDOR PRINCIPAL */
 
 .support-modal-box{
-    position:relative;
+
     width:100%;
-    max-width:430px;
+    max-width:460px;
+
     background:#ffffff;
-    border-radius:22px;
-    padding:32px 30px 27px;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
     box-shadow:
-        0 25px 70px rgba(0,0,0,.20);
-    text-align:center;
-    transform:translateY(20px) scale(.97);
-    transition:transform .3s ease;
+    0 25px 80px rgba(0,0,0,.22);
+
+    transform:translateY(15px);
+
+    transition:transform .35s ease;
+
 }
 
 
 /* ANIMACIÓN */
 
 .support-modal.show .support-modal-box{
-    transform:translateY(0) scale(1);
+
+    transform:translateY(0);
+
 }
 
 
-/* CERRAR */
+/* CABECERA */
 
-.support-close{
-    position:absolute;
-    top:13px;
-    right:15px;
-    width:34px;
-    height:34px;
-    border:none;
-    border-radius:50%;
-    background:#f1f5f9;
-    color:#475569;
-    font-size:25px;
-    line-height:30px;
-    cursor:pointer;
-    transition:.2s;
+.support-top{
+
+    padding:
+    32px
+    32px
+    22px;
+
+    text-align:left;
+
 }
 
 
-.support-close:hover{
-    background:#e2e8f0;
-}
+/* LÍNEA CORPORATIVA */
 
+.support-brand-line{
 
-/* ICONO */
+    width:42px;
+    height:4px;
 
-.support-icon{
-    width:64px;
-    height:64px;
-    border-radius:18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin:0 auto 13px;
-    background:#ecfdf3;
-    font-size:31px;
+    background:#123c8c;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+
 }
 
 
 /* ESTADO */
 
 .support-status{
+
     display:inline-block;
-    color:#159447;
-    background:#ecfdf3;
-    font-size:13px;
+
+    color:#1d5fd1;
+
+    font-size:11px;
+
     font-weight:700;
-    padding:6px 13px;
-    border-radius:30px;
-    margin-bottom:13px;
+
+    letter-spacing:1.2px;
+
+    margin-bottom:10px;
+
 }
 
 
 /* TITULO */
 
-.support-modal-box h2{
-    color:#0f172a;
-    font-size:27px;
-    margin-bottom:9px;
+.support-top h2{
+
+    margin:0 0 8px;
+
+    color:#111827;
+
+    font-size:26px;
+
+    line-height:1.25;
+
+    font-weight:700;
+
 }
 
 
-/* TEXTO */
+/* SUBTITULO */
 
-.support-text{
+.support-subtitle{
+
+    margin:0;
+
     color:#64748b;
+
     font-size:15px;
-    line-height:1.55;
-    margin-bottom:18px;
+
+    line-height:1.6;
+
 }
 
 
-/* OPCIONES */
+/* SERVICIOS */
 
-.support-options{
-    text-align:left;
-    background:#f8fafc;
-    border:1px solid #eef2f7;
-    border-radius:14px;
-    padding:15px 17px;
-    margin-bottom:17px;
+.support-services{
+
+    margin:
+    0
+    32px
+    20px;
+
+    padding:18px;
+
+    background:#f7f9fc;
+
+    border:1px solid #e8edf5;
+
+    border-radius:12px;
+
 }
 
 
-.support-options div{
+/* ITEM */
+
+.support-service{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    padding:7px 0;
+
     color:#334155;
+
     font-size:14px;
-    padding:5px 0;
+
+    line-height:1.4;
+
 }
 
 
-/* MENSAJE */
+/* CHECK */
 
-.support-message{
+.service-check{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex:0 0 19px;
+
+    width:19px;
+    height:19px;
+
+    border-radius:50%;
+
+    background:#eaf2ff;
+
+    color:#123c8c;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    margin-top:1px;
+
+}
+
+
+/* DESCRIPCIÓN */
+
+.support-description{
+
+    margin:
+    0
+    32px
+    20px;
+
     color:#475569;
+
     font-size:14px;
-    margin-bottom:17px;
+
+    line-height:1.6;
+
 }
 
 
 /* BOTÓN */
 
-.support-whatsapp{
+.support-button{
+
     display:block;
-    width:100%;
-    background:#18a957;
+
+    margin:
+    0
+    32px;
+
+    padding:
+    15px
+    22px;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    135deg,
+    #123c8c,
+    #1d5fd1
+    );
+
     color:#ffffff;
+
     text-decoration:none;
-    padding:15px 20px;
-    border-radius:12px;
-    font-size:17px;
+
+    border-radius:9px;
+
+    font-size:15px;
+
     font-weight:700;
+
+    letter-spacing:.1px;
+
+    box-shadow:
+    0 8px 22px
+    rgba(29,95,209,.23);
+
     transition:
-        transform .2s ease,
-        background .2s ease,
-        box-shadow .2s ease;
-    box-shadow:0 8px 20px rgba(24,169,87,.22);
+    transform .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+
 }
 
 
-.support-whatsapp:hover{
-    background:#128342;
+/* HOVER */
+
+.support-button:hover{
+
     transform:translateY(-1px);
+
+    box-shadow:
+    0 10px 28px
+    rgba(29,95,209,.30);
+
 }
 
 
-/* SEGURIDAD */
+/* PIE */
 
-.support-security{
-    color:#94a3b8;
+.support-footer-modal{
+
+    margin-top:24px;
+
+    padding:
+    17px
+    32px;
+
+    background:#f8fafc;
+
+    border-top:1px solid #eef2f7;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    color:#64748b;
+
     font-size:11px;
-    margin-top:14px;
+
+    line-height:1.5;
+
 }
 
 
+/* PUNTO DE SEGURIDAD */
+
+.security-dot{
+
+    width:7px;
+    height:7px;
+
+    min-width:7px;
+
+    border-radius:50%;
+
+    background:#16a34a;
+
+}
+
+
+/* ============================= */
 /* RESPONSIVE */
+/* ============================= */
 
 @media(max-width:600px){
 
     .support-modal{
-        padding:15px;
-        align-items:center;
+
+        padding:16px;
+
     }
+
 
     .support-modal-box{
-        max-width:390px;
-        padding:29px 20px 23px;
-        border-radius:19px;
+
+        max-width:400px;
+
+        border-radius:16px;
+
     }
 
-    .support-modal-box h2{
-        font-size:24px;
+
+    .support-top{
+
+        padding:
+        27px
+        22px
+        19px;
+
     }
 
-    .support-text{
+
+    .support-top h2{
+
+        font-size:23px;
+
+    }
+
+
+    .support-subtitle{
+
         font-size:14px;
+
     }
 
-    .support-options div{
+
+    .support-services{
+
+        margin:
+        0
+        22px
+        18px;
+
+        padding:15px;
+
+    }
+
+
+    .support-service{
+
         font-size:13px;
+
     }
 
-    .support-whatsapp{
-        font-size:16px;
+
+    .support-description{
+
+        margin:
+        0
+        22px
+        18px;
+
+        font-size:13px;
+
+    }
+
+
+    .support-button{
+
+        margin:
+        0
+        22px;
+
+        padding:14px 18px;
+
+        font-size:15px;
+
+    }
+
+
+    .support-footer-modal{
+
+        padding:
+        15px
+        22px;
+
     }
 
 }
 
 
-/* PANTALLAS MUY PEQUEÑAS */
+/* PANTALLAS BAJAS */
 
 @media(max-height:620px){
 
     .support-modal{
+
         align-items:flex-start;
+
         overflow-y:auto;
-        padding-top:20px;
-        padding-bottom:20px;
+
+        padding-top:18px;
+        padding-bottom:18px;
+
     }
 
 }
@@ -308,66 +546,28 @@
 
 <script>
 
-const supportModal = document.getElementById("supportModal");
+const supportModal =
+document.getElementById("supportModal");
 
-let supportTimer;
-
-
-/* MOSTRAR AL CARGAR */
 
 window.addEventListener("load", function(){
+
+    /* APARECE POCO DESPUÉS DE CARGAR */
 
     setTimeout(function(){
 
         supportModal.classList.add("show");
 
-    }, 400);
+    }, 500);
 
 
-    /* DESAPARECER AUTOMÁTICAMENTE A LOS 20 SEGUNDOS */
+    /* DESAPARECE AUTOMÁTICAMENTE A LOS 20 SEGUNDOS */
 
-    supportTimer = setTimeout(function(){
+    setTimeout(function(){
 
-        closeSupportModal();
+        supportModal.classList.remove("show");
 
     }, 20000);
-
-});
-
-
-/* CERRAR */
-
-function closeSupportModal(){
-
-    supportModal.classList.remove("show");
-
-    clearTimeout(supportTimer);
-
-}
-
-
-/* CERRAR SI TOCAN FUERA DE LA CAJA */
-
-supportModal.addEventListener("click", function(event){
-
-    if(event.target === supportModal){
-
-        closeSupportModal();
-
-    }
-
-});
-
-
-/* CERRAR CON ESC */
-
-document.addEventListener("keydown", function(event){
-
-    if(event.key === "Escape"){
-
-        closeSupportModal();
-
-    }
 
 });
 
