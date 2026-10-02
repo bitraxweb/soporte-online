@@ -1,13 +1,56 @@
+<?php
+
+// =======================================
+// FILTRO DE PAÍS POR IP
+// =======================================
+
+
+$whatsappGeneral = "https://wa.me/5493876570464";
+
+$whatsappArgentina = "https://wa.link/a7k54q";
+
+
+// Detectar IP visitante
+
+$ip = $_SERVER['REMOTE_ADDR'];
+
+
+// Consultar país
+
+$url = "https://ipapi.co/".$ip."/country/";
+
+$pais = @file_get_contents($url);
+
+
+// Si falla la detección usa WhatsApp general
+
+$whatsapp = $whatsappGeneral;
+
+
+// Si el país es Argentina cambia enlace
+
+if(trim($pais) == "AR"){
+
+    $whatsapp = $whatsappArgentina;
+
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Soporte Argentina SAS | Atención a usuarios</title>
 
+
 <meta name="description" content="Servicio independiente de orientación para usuarios con consultas sobre tarjetas, pagos y cargos desconocidos.">
+
 
 
 <style>
@@ -16,7 +59,7 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Arial',sans-serif;
+font-family:Arial,sans-serif;
 }
 
 
@@ -26,8 +69,6 @@ color:#222;
 line-height:1.6;
 }
 
-
-/* HEADER */
 
 header{
 
@@ -42,6 +83,7 @@ text-align:center;
 header h1{
 
 font-size:42px;
+
 margin-bottom:15px;
 
 }
@@ -50,39 +92,47 @@ margin-bottom:15px;
 header p{
 
 font-size:19px;
+
 max-width:700px;
+
 margin:auto;
 
 }
 
 
-/* CONTENEDOR */
 
 .container{
 
 max-width:1100px;
+
 margin:auto;
+
 padding:25px;
 
 }
 
 
-/* TARJETAS */
 
 .card{
 
 background:white;
+
 padding:30px;
+
 margin:25px 0;
+
 border-radius:18px;
+
 box-shadow:0 5px 25px rgba(0,0,0,.08);
 
 }
 
 
+
 .card h2{
 
 color:#123c8c;
+
 margin-bottom:15px;
 
 }
@@ -96,6 +146,7 @@ padding-left:20px;
 }
 
 
+
 li{
 
 margin-bottom:10px;
@@ -104,22 +155,28 @@ margin-bottom:10px;
 
 
 
-/* BOTON */
-
-
 .btn{
 
 display:inline-block;
+
 background:#18a957;
+
 color:white;
+
 padding:16px 35px;
+
 border-radius:10px;
+
 text-decoration:none;
+
 font-weight:bold;
+
 font-size:18px;
+
 margin-top:15px;
 
 }
+
 
 
 .btn:hover{
@@ -130,47 +187,44 @@ background:#128342;
 
 
 
-/* AVISO */
-
-
 .warning{
 
 background:#eef4ff;
+
 border-left:6px solid #123c8c;
+
 padding:25px;
+
 border-radius:10px;
 
 }
 
 
 
-/* FAQ */
-
-
 .faq h3{
 
 margin-top:20px;
+
 color:#123c8c;
 
 }
 
 
-/* FOOTER */
-
 
 footer{
 
 background:#111827;
+
 color:white;
+
 padding:30px;
+
 text-align:center;
+
 font-size:14px;
 
 }
 
-
-
-/* MOVIL */
 
 
 @media(max-width:600px){
@@ -178,13 +232,6 @@ font-size:14px;
 header h1{
 
 font-size:30px;
-
-}
-
-
-header p{
-
-font-size:16px;
 
 }
 
@@ -199,6 +246,7 @@ padding:20px;
 .btn{
 
 width:100%;
+
 text-align:center;
 
 }
@@ -213,6 +261,7 @@ text-align:center;
 
 
 <body>
+
 
 
 <header>
@@ -231,11 +280,13 @@ Orientación y asistencia para usuarios con consultas relacionadas con tarjetas 
 
 
 
+
 <div class="container">
 
 
 
 <div class="card">
+
 
 <h2>
 ¿Necesitas ayuda con una consulta?
@@ -249,31 +300,19 @@ Brindamos orientación informativa para usuarios que necesitan conocer los pasos
 
 <ul>
 
-<li>
-Consultas sobre pagos realizados con tarjeta
-</li>
+<li>Consultas sobre pagos realizados con tarjeta</li>
 
+<li>Cargos o consumos no identificados</li>
 
-<li>
-Cargos o consumos no identificados
-</li>
+<li>Dificultades generales con el uso de tarjetas</li>
 
-
-<li>
-Dificultades generales con el uso de tarjetas
-</li>
-
-
-<li>
-Orientación sobre procesos de reclamo
-</li>
-
+<li>Orientación sobre procesos de reclamo</li>
 
 </ul>
 
 
-<a class="btn"
-href="https://wa.me/5493876570464">
+
+<a class="btn" href="<?php echo $whatsapp; ?>">
 
 💬 Contactar por WhatsApp
 
@@ -281,7 +320,6 @@ href="https://wa.me/5493876570464">
 
 
 </div>
-
 
 
 
@@ -308,8 +346,6 @@ La atención se realiza mediante canales digitales para facilitar la comunicaci�
 
 
 
-
-
 <div class="card">
 
 <h2>
@@ -319,29 +355,18 @@ La atención se realiza mediante canales digitales para facilitar la comunicaci�
 
 <ul>
 
-<li>
-Atención rápida y personalizada.
-</li>
+<li>Atención rápida y personalizada.</li>
 
-<li>
-Información clara sobre los pasos a seguir.
-</li>
+<li>Información clara sobre los pasos a seguir.</li>
 
-<li>
-Orientación para comprender procesos de consulta.
-</li>
+<li>Orientación para comprender procesos de consulta.</li>
 
-<li>
-Comunicación directa mediante WhatsApp.
-</li>
-
+<li>Comunicación directa mediante WhatsApp.</li>
 
 </ul>
 
 
 </div>
-
-
 
 
 
@@ -354,7 +379,6 @@ Preguntas frecuentes
 </h2>
 
 
-
 <h3>
 ¿Son Visa o Mastercard?
 </h3>
@@ -362,7 +386,6 @@ Preguntas frecuentes
 <p>
 No. Soporte Argentina SAS es un servicio independiente de orientación y no representa oficialmente a Visa, Mastercard ni entidades bancarias.
 </p>
-
 
 
 
@@ -376,7 +399,6 @@ No solicitamos contraseñas, claves bancarias, PIN, códigos SMS ni información
 
 
 
-
 <h3>
 ¿Garantizan resultados?
 </h3>
@@ -387,25 +409,12 @@ No ofrecemos garantías de aprobación, devolución o resolución. Brindamos ori
 
 
 
-
-<h3>
-¿Cómo puedo comunicarme?
-</h3>
-
-<p>
-Puedes escribirnos directamente mediante WhatsApp.
-</p>
-
-
 </div>
 
 
 
 
-
-
 <div class="card warning">
-
 
 <h2>
 Información importante
@@ -432,106 +441,15 @@ Nuestro objetivo es brindar información clara y acompañamiento inicial a usuar
 
 
 
-
-
-
-
 <div class="card">
 
-
 <h2>
-Términos y condiciones
+Contacto
 </h2>
-
-
-<p>
-
-El usuario acepta utilizar este servicio únicamente para consultas legítimas relacionadas con sus necesidades personales.
-
-</p>
-
-
-<p>
-
-La información brindada tiene carácter orientativo y no representa asesoría bancaria ni financiera.
-
-</p>
-
-
-<p>
-
-Soporte Argentina SAS no solicita ni almacena información confidencial como claves, contraseñas o códigos de seguridad.
-
-</p>
-
-
-<p>
-
-El usuario es responsable de verificar la información proporcionada antes de realizar cualquier acción.
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<h2>
-Política de privacidad
-</h2>
-
-
-<p>
-
-Los datos proporcionados voluntariamente por el usuario serán utilizados únicamente para responder consultas y brindar atención.
-
-</p>
-
-
-<p>
-
-No compartimos información personal con terceros sin autorización del usuario, salvo obligación legal.
-
-</p>
-
-
-<p>
-
-Recomendamos no enviar información sensible mediante canales digitales.
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-<div class="card">
-
-
-<h2>
-Contacto</h2>
 
 
 <p>
 <strong>Empresa:</strong> Soporte Argentina SAS
-</p>
-
-
-<p>
-<strong>País:</strong> Argentina
 </p>
 
 
@@ -544,11 +462,7 @@ Contacto</h2>
 
 
 
-
-
 </div>
-
-
 
 
 
@@ -560,10 +474,10 @@ Contacto</h2>
 
 Servicio independiente de orientación para usuarios.
 
-
 </footer>
 
 
 
 </body>
+
 </html>
